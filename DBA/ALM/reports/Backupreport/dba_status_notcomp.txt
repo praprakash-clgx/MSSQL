@@ -1,0 +1,148 @@
+
+SET NOCOUNT ON
+declare @name  varchar(30)
+DECLARE @FileName VARCHAR(255) 
+DECLARE @File_Exists INT 
+declare @servername nvarchar(200)
+declare @dbcount varchar(20)
+declare @dbname  varchar(30)
+declare @size	 varchar(20)
+declare @type	 varchar(20)
+declare	@duration varchar(30)
+declare	@username varchar(50)
+declare @status   varchar(75)
+declare @rundate  varchar(20)
+declare @DiskRetention  varchar(50)
+declare @count varchar(20)
+select 	a.name, max(backup_finish_date) as bkup_finish_date
+INTO 	#mx
+from 	master.sys.databases a
+LEFT 	OUTER JOIN msdb..backupset b
+ON      a.name = b.database_name
+where	a.name <> 'tempdb' and a.state_desc not in('OFFLINE','RESTORING') and a.is_read_only=0 and a.name not like '%mock%'
+and b.type = 'D'
+and a.database_id not in (select database_id from sys.database_mirroring where mirroring_guid is not null and mirroring_role_desc = 'MIRROR')
+--or b.type ='I'
+group	by a.name
+order	by a.name
+
+
+
+select 	a.name as dbname ,
+	CONVERT(decimal(20,2),Round((backup_size/1048576),0)) as size_mb, 	
+			CASE WHEN b.backup_start_date > DATEADD(dd,-1,getdate())
+--convert(int,b.backup_start_date,101) >= convert(int,DATEADD(dd,-1,getdate()),101)
+		  THEN 'Backup Completed'
+	     ELSE 'Backup Not Completed'
+	END
+	AS 'Status',	
+	a.bkup_finish_date as rundate
+INTO	#backup1
+from 	#mx a,
+	msdb..backupset b
+where 	a.name = b.database_name
+and	a.bkup_finish_date = b.backup_finish_date 
+--and	server_name = CONVERT(varchar(100), serverproperty('servername'))
+and b.type = 'D'
+
+
+select b.name as dbname, coalesce (a.size_mb,0) as size_mb ,coalesce(a.Status,'Backup Not Completed') as [Status] ,coalesce(a.rundate,'') as rundate
+into #backup
+from #backup1 a
+right outer join master.sys.databases b
+on a.dbname = b.name
+where b.name not in ('tempdb')
+and a.dbname not in (select db_name(database_id) from sys.database_mirroring where mirroring_guid is not null and mirroring_role_desc = 'MIRROR')
+and b.state_desc not in('OFFLINE','RESTORING')
+
+delete from #backup where Status = 'Backup Completed'
+ALTER TABLE #backup ALTER COLUMN Status VARCHAR(150) NOT NULL
+
+
+select @servername =  CONVERT(varchar(100), serverproperty('servername'))
+
+if (@servername='WUWVC9DBSQL14')
+begin
+	update #backup set Status = 'Full backup Scheduled during Weekends' where Status = 'Backup Not Completed' and dbname in ('admin','RiskManagementOnline','RMP_Monitoring', 'Savedesk')
+end
+
+if (@servername='WUWCC9DBSQL14')
+begin
+	update #backup set Status = 'Full backup Scheduled during Weekends' where Status = 'Backup Not Completed' and dbname in ('admin','RiskManagementOnline','RMP_Monitoring', 'Savedesk')
+end
+
+
+if (@servername='WUWVC9DBSQL15')
+begin
+	update #backup set Status = 'Full backup Scheduled during Weekends' where Status = 'Backup Not Completed' and dbname in ('admin','Monitor','RiskManagementReporting', 'RiskManagementWarehouse')
+end
+
+
+if (@servername='WUWVC9DBSQL16')
+begin
+	delete from #backup where dbname like 'WUTRACE_%'
+end
+
+if (@servername='WUWCC9DBSQL16')
+begin
+	delete from #backup where dbname like 'WUTRACE_%'
+end
+
+if (@servername='WUWVC9DBSQL17')
+begin
+	delete from #backup where dbname like 'WUTRACE_%'
+end
+
+if (@servername='WUWCC9DBSQL17')
+begin
+	delete from #backup where dbname like 'WUTRACE_%'
+end
+
+select @dbcount = count(dbname) from #backup
+
+if  ((select count(1) from #backup)  = 0)
+begin
+	GOTO ENDLine
+end
+
+
+print '<tr><tr rowspan='+ @dbcount +'><td align=center bgcolor = gray rowspan='+ @dbcount +'><b><font face=verdana color=white size=1>' +  @servername + '</font></b></td>'
+print '<td align=center rowspan='+ @dbcount +'><font face=verdana '
+print 'size=1>'
+print 'PROD'
+print '</font></td>'
+
+
+
+DECLARE bkpup CURSOR FOR SELECT dbname, size_mb, Status, rundate from #backup
+OPEN bkpup 
+
+FETCH NEXT FROM bkpup
+INTO @dbname, @size,    @status, @rundate
+
+WHILE @@FETCH_STATUS = 0
+BEGIN
+	
+	PRINT  '<td align=center><font face=verdana size=1>' +  @dbname + '</font></td>'
+	PRINT  '<td align=center><font face=verdana size=1>' +  @size + '</font></td>'
+		IF @status <> 'Backup Completed'
+		PRINT  '<td align=center><b><font face=verdana size=1 COLOR=Red>' +  @status + '*</font></b></td>'
+	ELSE
+		PRINT  '<td align=center><font face=verdana size=1>' +  @status + '</font></td>'
+	PRINT  '<td align=center><font face=verdana size=1>' +  @rundate + '</font></td></tr>'
+	
+   FETCH NEXT FROM bkpup
+   INTO @dbname, @size, @status, @rundate
+
+END
+Close bkpup
+Deallocate bkpup 
+
+print '</tr>'
+
+ENDLine:
+drop table #mx
+drop table #backup
+drop table #backup1
+--drop table #temp
+--drop table #temp_1

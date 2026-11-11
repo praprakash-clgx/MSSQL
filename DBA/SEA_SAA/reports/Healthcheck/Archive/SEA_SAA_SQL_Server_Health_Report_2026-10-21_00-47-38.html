@@ -1,0 +1,122 @@
+﻿<html>
+<head>
+<style>
+    body { background-color: #FFFFFF; font-family: Tahoma; font-size: 12pt; }
+    h2 { color: #333399; }
+    p { font-size: 12px; color: #333; }
+    table { width: 95%; margin-left: 10px; margin-bottom: 20px; table-layout: auto; }
+    th { background-color: lightblue ; color: black; font-weight: bold; padding: 8px; text-align: center; border: 1px solid #ddd; }
+    td { border: 1px solid #ddd; padding: 8px; text-align: center; font-weight: normal; }
+    .hostname { background-color: #f2f2f2; font-weight: bold; } /* Hostname column with grey background */
+    .highlight { color: red; font-weight: bold; } /* Free % values less than 20% will be in red */
+    .star { color: red; font-weight: bold; } /* Red for star symbol */
+    .server-info { background-color: #f9f9f9; font-weight: bold; } /* Server-level info styling */
+    .running-status { color: green; font-weight: bold; } /* Green for running status */
+    .negative { color: red; font-weight: bold; } /* Red for negative results */
+</style>
+</head>
+<body>
+<h2>SQL Server Health Report</h2>
+<p>Report Generated On: 2026-10-21_00-47-38</p>
+<table>
+<tr>
+    <th>Hostname</th>
+    <th>SQL Instance Status</th>
+    <th>SQL Agent Status</th>
+    <th>Last Reboot Date</th>
+    <th>Database Status</th>
+    <th>TempDB Size (MB)</th>
+    <th>Disk</th>
+    <th>Free Space (GB)</th>
+    <th>Used Space (GB)</th>
+    <th>Total Size (GB)</th>
+    <th>Free %</th>
+</tr>        <tr>            <td rowspan='6' class='hostname'>SEAUW1GELISSF02.infosolco.com</td>
+            <td rowspan='6' class='server-info running-status'>Running</td>
+            <td rowspan='6' class='server-info running-status'>Running</td>
+            <td rowspan='6' class='server-info'>2026-09-19 22:10:39</td>
+            <td rowspan='6' class='server-info running-status'>
+All databases are online
+
+
+</td>
+            <td rowspan='6' class='server-info'>
+20735.88
+
+
+</td>            <td>C:</td>
+            <td>104.66</td>
+            <td>45.23</td>
+            <td>149.89</td>
+            <td>69.82 %</td>
+        </tr>        <tr>            <td>D:</td>
+            <td>482.65</td>
+            <td>1917.22</td>
+            <td>2399.87</td>
+            <td>20.11 %</td>
+        </tr>        <tr>            <td>I:</td>
+            <td>140.26</td>
+            <td>9.71</td>
+            <td>149.97</td>
+            <td>93.52 %</td>
+        </tr>        <tr>            <td>L:</td>
+            <td>87.03</td>
+            <td>62.85</td>
+            <td>149.87</td>
+            <td>58.07 %</td>
+        </tr>        <tr>            <td>R:</td>
+            <td>261.72</td>
+            <td>38.16</td>
+            <td>299.87</td>
+            <td>87.28 %</td>
+        </tr>        <tr>            <td>T:</td>
+            <td>26.53</td>
+            <td>23.34</td>
+            <td>49.87</td>
+            <td>53.19 %</td>
+        </tr>        <tr>            <td rowspan='6' class='hostname'>SEAUW1GELISSF01.infosolco.com</td>
+            <td rowspan='6' class='server-info running-status'>Running</td>
+            <td rowspan='6' class='server-info running-status'>Running</td>
+            <td rowspan='6' class='server-info'>2026-09-19 22:04:05</td>
+            <td rowspan='6' class='server-info running-status'>
+All databases are online
+
+
+</td>
+            <td rowspan='6' class='server-info'>
+87724.81
+
+
+</td>            <td>C:</td>
+            <td>88.53</td>
+            <td>61.35</td>
+            <td>149.89</td>
+            <td>59.07 %</td>
+        </tr>        <tr>            <td>D:</td>
+            <td>480.38</td>
+            <td>1469.49</td>
+            <td>1949.87</td>
+            <td>24.64 %</td>
+        </tr>        <tr>            <td>I:</td>
+            <td>392.61</td>
+            <td>7.36</td>
+            <td>399.97</td>
+            <td>98.16 %</td>
+        </tr>        <tr>            <td>L:</td>
+            <td>209.47</td>
+            <td>140.4</td>
+            <td>349.87</td>
+            <td>59.87 %</td>
+        </tr>        <tr>            <td>R:</td>
+            <td>385.83</td>
+            <td>114.05</td>
+            <td>499.87</td>
+            <td>77.18 %</td>
+        </tr>        <tr>            <td>T:</td>
+            <td>56.86</td>
+            <td>93.01</td>
+            <td>149.87</td>
+            <td>37.94 %</td>
+        </tr></table>
+</body>
+</html>

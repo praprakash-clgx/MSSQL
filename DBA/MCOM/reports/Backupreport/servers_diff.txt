@@ -1,0 +1,2 @@
+cli_11_mt_sq_as2_prd.data.solutions.corelogic.com	PROD	MCOM	cli_11_mt_sq_as2_prd.data.solutions.corelogic.com	1433
+cli_12_mt_sq_as2_prd.data.solutions.corelogic.com	PROD	MCOM	cli_12_mt_sq_as2_prd.data.solutions.corelogic.com	1433

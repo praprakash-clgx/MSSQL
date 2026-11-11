@@ -1,0 +1,21 @@
+msb_71_rc_sq_uw1_prd.data.solutions.corelogic.com	PROD	MSB	msb_71_rc_sq_uw1_prd.data.solutions.corelogic.com	1433
+msb_72_rc_sq_uw1_prd.data.solutions.corelogic.com	PROD	MSB	msb_72_rc_sq_uw1_prd.data.solutions.corelogic.com	1433
+msb_73_rc_sq_uw1_prd.data.solutions.corelogic.com	PROD	MSB	msb_73_rc_sq_uw1_prd.data.solutions.corelogic.com	1433
+msb_75_rc_sq_uw1_prd.data.solutions.corelogic.com	PROD	MSB	msb_75_rc_sq_uw1_prd.data.solutions.corelogic.com	1433
+msb_01_ce_sq_uw1_prd.data.solutions.corelogic.com	PROD	MSB	msb_01_ce_sq_uw1_prd.data.solutions.corelogic.com	1433
+msb_01_db_sq_nn1_prd_rdp.data.solutions.corelogic.com	PROD	MSB	msb_01_db_sq_nn1_prd_rdp.data.solutions.corelogic.com	1433
+msb_02_db_sq_nn1_prd_rdp.data.solutions.corelogic.com	PROD	MSB	msb_02_db_sq_nn1_prd_rdp.data.solutions.corelogic.com	1433
+msb_03_db_sq_nn1_prd_rdp.data.solutions.corelogic.com	PROD	MSB	msb_03_db_sq_nn1_prd_rdp.data.solutions.corelogic.com	1433
+msb_01_if_sq_uw1_prd.data.solutions.corelogic.com	PROD	MSB	msb_01_if_sq_uw1_prd.data.solutions.corelogic.com	1433
+msb_01_mt_is_uw1_prd.data.solutions.corelogic.com	PROD	MSB	msb_01_mt_is_uw1_prd.data.solutions.corelogic.com	1433
+msb_22_an_sq_uw1_prd.data.solutions.corelogic.com	PROD	MSB	msb_22_an_sq_uw1_prd.data.solutions.corelogic.com	1433
+msb_01_an_sq_uw1_prd.data.solutions.corelogic.com	PROD	MSB	msb_01_an_sq_uw1_prd.data.solutions.corelogic.com	1433
+msb_71_ut_sq_uw1_prd.data.solutions.corelogic.com	PROD	MSB	msb_71_ut_sq_uw1_prd.data.solutions.corelogic.com	1433
+msb_52_rc_sq_uw1_prd.data.solutions.corelogic.com	PROD	MSB	msb_52_rc_sq_uw1_prd.data.solutions.corelogic.com	1433
+msb_01_ut_sq_uw1_prd.data.solutions.corelogic.com	PROD	MSB	msb_01_ut_sq_uw1_prd.data.solutions.corelogic.com	1433
+msb_96_ce_sq_uw1_prd.data.solutions.corelogic.com	PROD	MSB	msb_96_ce_sq_uw1_prd.data.solutions.corelogic.com	1433
+msb_91_ce_sq_uw1_prd.data.solutions.corelogic.com	PROD	MSB	msb_91_ce_sq_uw1_prd.data.solutions.corelogic.com	1433
+msb_01_si_is_uw1_prd.data.solutions.corelogic.com	PROD	MSB	msb_01_si_is_uw1_prd.data.solutions.corelogic.com	1433
+msb_01_si_sq_uw1_prd.data.solutions.corelogic.com	PROD	MSB	msb_01_si_sq_uw1_prd.data.solutions.corelogic.com	1433
+msb_01_si_rs_uw1_prd.data.solutions.corelogic.com	PROD	MSB	msb_01_si_rs_uw1_prd.data.solutions.corelogic.com	1433
+

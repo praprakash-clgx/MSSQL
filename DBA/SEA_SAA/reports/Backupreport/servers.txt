@@ -1,0 +1,5 @@
+sea_12_sf_sq_uc1_reg.data.solutions.corelogic.com       PROD    SEA     sea_12_sf_sq_uc1_reg.data.solutions.corelogic.com       1433
+sea_02_sf_sq_uw1_reg.data.solutions.corelogic.com       PROD    SEA     sea_02_sf_sq_uw1_reg.data.solutions.corelogic.com       1433
+sea_11_sf_sq_uc1_reg.data.solutions.corelogic.com       PROD    SEA     sea_11_sf_sq_uc1_reg.data.solutions.corelogic.com       1433
+sea_01_sf_sq_uw1_reg.data.solutions.corelogic.com       PROD    SEA     sea_01_sf_sq_uw1_reg.data.solutions.corelogic.com       1433
+saa_21_bt_sq_uw1_reg.data.solutions.corelogic.com       PROD    SAA     saa_21_bt_sq_uw1_reg.data.solutions.corelogic.com       1433

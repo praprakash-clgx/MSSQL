@@ -1,0 +1,215 @@
+param (
+    [string[]] $ProjectID_Account,
+    [switch] $WhatIf
+)
+
+function Send-OrphanDiskReport {
+    param (
+        [string] $FilePath,
+        [array] $DiskData
+    )
+
+    $From = "diskinf@cotality.com"
+    $To = "DB-Services-MSSQL.TSG@cotality.com"
+    $Subject = "GCP Orphan Disk Report"
+    $SMTPServer = "smtp.corelogic.com"
+    $SMTPPort = 25
+
+    # Build HTML table
+    $htmlBody = @"
+<html>
+<head>
+<style>
+table { border-collapse: collapse; width: 100%; font-family: Arial; }
+th, td { border: 1px solid #dddddd; text-align: left; padding: 8px; }
+th { background-color: #f2f2f2; }
+</style>
+</head>
+<body>
+<p>Here is the orphan disk report:</p>
+<table>
+<tr>
+    <th>Project ID</th>
+    <th>Disk Name</th>
+    <th>Location</th>
+    <th>Scope</th>
+    <th>SizeMB</th>
+    <th>Type</th>
+    <th>Status</th>
+</tr>
+"@
+
+    foreach ($entry in $DiskData) {
+        $htmlBody += "<tr><td>$($entry.'project-id')</td><td>$($entry.'disk-name')</td><td>$($entry.location)</td><td>$($entry.scope)</td><td>$($entry.sizeMB)</td><td>$($entry.type)</td><td>$($entry.status)</td></tr>"
+    }
+
+    $htmlBody += "</table></body></html>"
+
+    Send-MailMessage -From $From -To $To -Subject $Subject `
+        -Body $htmlBody -BodyAsHtml `
+        -SmtpServer $SMTPServer -Port $SMTPPort `
+        -Attachments $FilePath
+}
+
+        $ProjectID = @(
+            'clgx-mssql-st-glb-sbx-7955',
+            'clgx-mssql-st-glb-prd-d016',
+            'clgx-mssql-st-glb-reg-f831',
+            'clgx-mssql-st-glb-nonprd-6e19',
+            'clgx-ins-com-can-data-prd-333c',
+            'clgx-ins-com-can-data-stg-c43c',
+            'clgx-msbmssqlst-data-prd-4906',
+            'clgx-sqlmonitor-data-prd-fcca',
+            'clgx-msbmssqlst-data-dev-e713',
+            'clgx-msbmssqlst-data-uat-b235',
+            'clgx-creditmssql-data-reg-526a',
+            'clgx-mssqlssis-mgt-reg-19d1',
+            'clgx-mssqlssis-mgt-prd-ce54',
+            'clgx-mssqlssis-mgt-drg-8d8c',
+            'clgx-mssqlssis-mgt-dr-5632',
+            'clgx-msbmssqlsir-data-prd-e513',
+            'clgx-edg-mssql-dev-a8e3',
+            'clgx-edg-mssql-prd-0337',
+            'clgx-edg-mssql-sbx-ebd3',
+            'clgx-edg-mssql-uat-215b',
+            'clgx-edg-mssql-reg-3f62'
+        )
+
+
+function Send-NoOrphanDiskReport {
+    param (
+        [string] $FilePath,
+        [array] $DiskData
+    )
+
+    $From = "diskinfo@cotality.com"
+    $To = "DB-Services-MSSQL.TSG@cotality.com"
+    $Subject = "[Informational] GCP Orphan Disk Report - None"
+    $SMTPServer = "smtp.corelogic.com"
+    $SMTPPort = 25
+
+    # Build HTML table
+    $htmlBody = @"
+<html>
+<head>
+<style>
+table { border-collapse: collapse; width: 100%; font-family: Arial; }
+th, td { border: 1px solid #dddddd; text-align: left; padding: 8px; }
+th { background-color: #f2f2f2; }
+</style>
+</head>
+<body>
+<p>Hello Team,</p>
+<p>                   </p>
+<p>There are no Orphan disks on the below projects.</p>
+<h1> Project Details </h1>
+<table>
+<tr><th>Serial No.</th><th>Value</th></tr>
+
+<p> Thanks and Regards </p>
+<p> MSSQL DBA Team </p>
+"@
+
+
+# Add rows to the table
+
+for ($i = 0; $i -lt $ProjectID.Count; $i++) {
+    $htmlBody += "<tr><td>$($i + 1)</td><td>$($ProjectID[$i])</td></tr>"
+}
+
+
+$htmlBody += @"
+</table>
+</body>
+</html>
+"@
+
+
+    Send-MailMessage -From $From -To $To -Subject $Subject `
+        -Body $htmlBody -BodyAsHtml `
+        -SmtpServer $SMTPServer -Port $SMTPPort `
+        
+}
+
+function main {
+    if (-not $ProjectID_Account) {
+        $ProjectID_Account = @(
+            'clgx-mssql-st-glb-sbx-7955',
+            'clgx-mssql-st-glb-prd-d016',
+            'clgx-mssql-st-glb-reg-f831',
+            'clgx-mssql-st-glb-nonprd-6e19',
+            'clgx-ins-com-can-data-prd-333c',
+            'clgx-ins-com-can-data-stg-c43c',
+            'clgx-msbmssqlst-data-prd-4906',
+            'clgx-sqlmonitor-data-prd-fcca',
+            'clgx-msbmssqlst-data-dev-e713',
+            'clgx-msbmssqlst-data-uat-b235',
+            'clgx-creditmssql-data-reg-526a',
+            'clgx-mssqlssis-mgt-reg-19d1',
+            'clgx-mssqlssis-mgt-prd-ce54',
+            'clgx-mssqlssis-mgt-drg-8d8c',
+            'clgx-mssqlssis-mgt-dr-5632',
+            'clgx-msbmssqlsir-data-prd-e513',
+            'clgx-edg-mssql-dev-a8e3',
+            'clgx-edg-mssql-prd-0337',
+            'clgx-edg-mssql-sbx-ebd3',
+            'clgx-edg-mssql-uat-215b',
+            'clgx-edg-mssql-reg-3f62'
+        )
+    }
+}
+    $csvPath = Join-Path $env:TEMP "OrphanDiskReport_$(Get-Date -Format 'yyyyMMddHHmmss').csv"
+    $diskFound = $false
+    $diskData = @()
+
+    foreach ($Account in $ProjectID_Account) {
+        $OrphandiskCmd = "gcloud compute disks list --filter=""-users:* AND name!~snap"" --project $Account --verbosity=error"
+
+        if ($WhatIf) {
+            Write-Host "$OrphandiskCmd" -ForegroundColor Cyan
+        } else {
+            $rawOutput = Invoke-Expression -Command $OrphandiskCmd -ErrorAction SilentlyContinue
+            $RC_Orphandisk = $?
+
+            if (! $RC_Orphandisk) {
+                Write-Host "❌ Error fetching orphan disks for $Account" -ForegroundColor Red
+                continue
+            }
+
+            if ($rawOutput.Count -gt 1) {
+                $diskFound = $true
+
+                foreach ($line in $rawOutput | Select-Object -Skip 1) {
+                    $columns = $line -split '\s{2,}'  # Split by 2+ spaces
+
+                    if ($columns.Count -ge 6) {
+                        $diskData += [PSCustomObject]@{
+                            'project-id' = $Account
+                            'disk-name'  = $columns[0]
+                            'location'   = $columns[1]
+                            'scope'      = $columns[2]
+                            'sizeMB'  = $columns[3]
+                            'type'       = $columns[4]
+                            'status'     = $columns[5]
+                        }
+                    }
+                }
+
+                Write-Host "`n✅ Orphan disks found for Project: $Account" -ForegroundColor Magenta
+            } else {
+                Write-Host "ℹ️ No orphan disks found for Project: $Account" -ForegroundColor Yellow
+            }
+        }
+    }
+
+    if ($diskFound) {
+        $diskData | Export-Csv -Path $csvPath -NoTypeInformation -Encoding UTF8
+        Send-OrphanDiskReport -FilePath $csvPath -DiskData $diskData
+        Write-Host "`n📧 CSV report and HTML email sent successfully." -ForegroundColor Green
+    } else {
+        Write-Host "`n🚫 No orphan disks found across all projects. No report sent." -ForegroundColor Gray
+        Send-NoOrphanDiskReport
+    }
+
+
+main;

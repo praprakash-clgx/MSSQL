@@ -1,0 +1,10 @@
+crd_05_db_sq_uw1_reg.data.solutions.corelogic.com	PROD	CRD	crd_05_db_sq_uw1_reg.data.solutions.corelogic.com	2866
+crd_06_db_sq_uw1_reg.data.solutions.corelogic.com	PROD	CRD	crd_06_db_sq_uw1_reg.data.solutions.corelogic.com	2866
+crd_07_db_sq_uw1_reg.data.solutions.corelogic.com	PROD	CRD	crd_07_db_sq_uw1_reg.data.solutions.corelogic.com	2866
+crd_16_db_is_uw1_reg.data.solutions.corelogic.com	PROD	CRD	crd_16_db_is_uw1_reg.data.solutions.corelogic.com	2866
+crd_03_db_sq_uw1_reg.data.solutions.corelogic.com	PROD	CRD	crd_03_db_sq_uw1_reg.data.solutions.corelogic.com	2866
+crd_01_fc_sq_uw1_reg.data.solutions.corelogic.com	PROD	CRD	crd_01_fc_sq_uw1_reg.data.solutions.corelogic.com	2866
+crd_30_kf_sq_uc1_reg.data.solutions.corelogic.com	PROD	CRD	crd_30_kf_sq_uc1_reg.data.solutions.corelogic.com	2866
+crd_19_ob_sq_uw1_reg.data.solutions.corelogic.com	PROD	CRD	crd_19_ob_sq_uw1_reg.data.solutions.corelogic.com	2866
+crd_03_et_is_uw1_reg.data.solutions.corelogic.com	PROD	CRD	crd_03_et_is_uw1_reg.data.solutions.corelogic.com	2866
+crd_23_db_sq_uw1_reg.data.solutions.corelogic.com	PROD	CRD	crd_23_db_sq_uw1_reg.data.solutions.corelogic.com	2866

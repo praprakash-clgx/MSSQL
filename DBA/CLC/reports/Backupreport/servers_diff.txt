@@ -1,0 +1,7 @@
+clc_41_dt_sq_uw1_reg.data.solutions.corelogic.com	PROD	CLC	clc_41_dt_sq_uw1_reg.data.solutions.corelogic.com	1433
+clc_31_dw_is_uw1_reg.data.solutions.corelogic.com	PROD	CLC	clc_31_dw_is_uw1_reg.data.solutions.corelogic.com	1433
+clc_01_dw_sq_uw1_reg.data.solutions.corelogic.com	PROD	CLC	clc_01_dw_sq_uw1_reg.data.solutions.corelogic.com	1433
+clc_01_fe_sq_uw1_reg.data.solutions.corelogic.com	PROD	CLC	clc_01_fe_sq_uw1_reg.data.solutions.corelogic.com	1433
+clc_02_fe_sq_uw1_reg.data.solutions.corelogic.com	PROD	CLC	clc_02_fe_sq_uw1_reg.data.solutions.corelogic.com	1433
+clc_01_om_sq_uw1_reg.data.solutions.corelogic.com	PROD	CLC	clc_01_om_sq_uw1_reg.data.solutions.corelogic.com	1433
+clc_01_sc_sq_uw1_reg.data.solutions.corelogic.com	PROD	CLC	clc_01_sc_sq_uw1_reg.data.solutions.corelogic.com	1433

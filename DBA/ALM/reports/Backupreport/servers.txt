@@ -1,0 +1,2 @@
+alm_01_am_sq_uc1_reg.data.solutions.corelogic.com	PROD	ALM	alm_01_am_sq_uc1_reg.data.solutions.corelogic.com	1433
+alm_01_dt_sq_uc1_prd.data.solutions.corelogic.com	PROD	ALM	alm_01_dt_sq_uc1_prd.data.solutions.corelogic.com	1433

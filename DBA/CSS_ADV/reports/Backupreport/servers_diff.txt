@@ -1,0 +1,13 @@
+advuc1gesqgap11	PROD	CSS	adv_11_ap_sq_uc1_reg.data.solutions.corelogic.com	1433
+tcsuw1gesqbtt01	PROD	CSS	tcs_01_tt_sq_uw1_reg.data.solutions.corelogic.com	1433
+tcsuw1gesqgrd01	PROD	CSS	tcs_01_rd_sq_uw1_reg.data.solutions.corelogic.com	1433
+tcsuw1gesqgav01	PROD	CSS	tcs_01_av_sq_uw1_reg.data.solutions.corelogic.com	1433
+tcsuw1gasqgfm01 PROD    CSS     tcs_01_fm_sq_uw1_reg.data.solutions.corelogic.com       1433
+tcsuw1geisgav21 PROD    CSS     tcs_21_av_is_uw1_reg.data.solutions.corelogic.com       1433
+tcsuw1gasqgwd02	PROD	CSS	tcs_02_wd_sq_uw1_reg.data.solutions.corelogic.com	1433
+CETUW1GESQGRF01	PROD	CSS     cet_01_rf_sq_uw1_reg.data.solutions.corelogic.com	1433
+TSGUW1GASQGCR01	PROD	CSS     tsg_01_cr_sq_uw1_reg.data.solutions.corelogic.com	1433
+CETUC1GESQGRG01	PROD	CSS     cet_01_rg_sq_uc1_reg.data.solutions.corelogic.com	1433
+CETUW1GESQBEC08 PROD	CSS     cet_08_ec_sq_uw1_reg.data.solutions.corelogic.com	1433
+CETUC1GASQBLN01 PROD	CSS     cet_01_ln_sq_uc1_reg.data.solutions.corelogic.com	1433
+CETUW1GESQGPS01	PROD	CSS     cet_01_ps_sq_uw1_reg.data.solutions.corelogic.com	1433

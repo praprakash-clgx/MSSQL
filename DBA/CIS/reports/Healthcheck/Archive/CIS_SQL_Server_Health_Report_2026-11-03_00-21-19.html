@@ -1,0 +1,853 @@
+﻿<html>
+<head>
+<style>
+    body { background-color: #FFFFFF; font-family: Tahoma; font-size: 12pt; }
+    h2 { color: #333399; }
+    p { font-size: 12px; color: #333; }
+    table { width: 95%; margin-left: 10px; margin-bottom: 20px; table-layout: auto; }
+    th { background-color: lightblue ; color: black; font-weight: bold; padding: 8px; text-align: center; border: 1px solid #ddd; }
+    td { border: 1px solid #ddd; padding: 8px; text-align: center; font-weight: normal; }
+    .hostname { background-color: #f2f2f2; font-weight: bold; } /* Hostname column with grey background */
+    .highlight { color: red; font-weight: bold; } /* Free % values less than 20% will be in red */
+    .star { color: red; font-weight: bold; } /* Red for star symbol */
+    .server-info { background-color: #f9f9f9; font-weight: bold; } /* Server-level info styling */
+    .running-status { color: green; font-weight: bold; } /* Green for running status */
+    .negative { color: red; font-weight: bold; } /* Red for negative results */
+</style>
+</head>
+<body>
+<h2>SQL Server Health Report</h2>
+<p>Report Generated On: 2026-11-03_00-21-19</p>
+<table>
+<tr>
+    <th>Hostname</th>
+    <th>SQL Instance Status</th>
+    <th>SQL Agent Status</th>
+    <th>Last Reboot Date</th>
+    <th>Database Status</th>
+    <th>TempDB Size (MB)</th>
+    <th>Disk</th>
+    <th>Free Space (GB)</th>
+    <th>Used Space (GB)</th>
+    <th>Total Size (GB)</th>
+    <th>Free %</th>
+</tr>        <tr>            <td rowspan='6' class='hostname'>CISUW1GELISAG23.infosolco.com</td>
+            <td rowspan='6' class='server-info running-status'>Running</td>
+            <td rowspan='6' class='server-info running-status'>Running</td>
+            <td rowspan='6' class='server-info'>2026-10-16 21:58:30</td>
+            <td rowspan='6' class='server-info running-status'>
+All databases are online
+
+
+</td>
+            <td rowspan='6' class='server-info'>
+21504.00
+
+
+</td>            <td>C:</td>
+            <td>95.19</td>
+            <td>54.69</td>
+            <td>149.89</td>
+            <td>63.51 %</td>
+        </tr>        <tr>            <td>D:</td>
+            <td>94.72</td>
+            <td>5.15</td>
+            <td>99.87</td>
+            <td>94.84 %</td>
+        </tr>        <tr>            <td>I:</td>
+            <td>9.88</td>
+            <td>0.09</td>
+            <td>9.97</td>
+            <td>99.12 %</td>
+        </tr>        <tr>            <td>L:</td>
+            <td>48.45</td>
+            <td>1.42</td>
+            <td>49.87</td>
+            <td>97.15 %</td>
+        </tr>        <tr>            <td>R:</td>
+            <td>99.61</td>
+            <td>0.27</td>
+            <td>99.87</td>
+            <td>99.73 %</td>
+        </tr>        <tr>            <td>T:</td>
+            <td>78.78</td>
+            <td>21.09</td>
+            <td>99.87</td>
+            <td>78.88 %</td>
+        </tr>        <tr>            <td rowspan='6' class='hostname'>CISUW1GELISET01.infosolco.com</td>
+            <td rowspan='6' class='server-info running-status'>Running</td>
+            <td rowspan='6' class='server-info running-status'>Running</td>
+            <td rowspan='6' class='server-info'>2026-10-16 22:28:48</td>
+            <td rowspan='6' class='server-info running-status'>
+All databases are online
+
+
+</td>
+            <td rowspan='6' class='server-info'>
+21504.00
+
+
+</td>            <td>C:</td>
+            <td>78.66</td>
+            <td>71.22</td>
+            <td>149.89</td>
+            <td>52.48 %</td>
+        </tr>        <tr>            <td>D:</td>
+            <td>24.15</td>
+            <td>25.72</td>
+            <td>49.87</td>
+            <td>48.42 %</td>
+        </tr>        <tr>            <td>I:</td>
+            <td>9.74</td>
+            <td>0.23</td>
+            <td>9.97</td>
+            <td>97.68 %</td>
+        </tr>        <tr>            <td>L:</td>
+            <td>36</td>
+            <td>13.87</td>
+            <td>49.87</td>
+            <td>72.19 %</td>
+        </tr>        <tr>            <td>R:</td>
+            <td>47.75</td>
+            <td>2.13</td>
+            <td>49.87</td>
+            <td>95.73 %</td>
+        </tr>        <tr>            <td>T:</td>
+            <td>28.78</td>
+            <td>21.09</td>
+            <td>49.87</td>
+            <td>57.7 %</td>
+        </tr>        <tr>            <td rowspan='6' class='hostname'>CISUW1GELISET02.infosolco.com</td>
+            <td rowspan='6' class='server-info running-status'>Running</td>
+            <td rowspan='6' class='server-info running-status'>Running</td>
+            <td rowspan='6' class='server-info'>2026-10-16 21:51:13</td>
+            <td rowspan='6' class='server-info running-status'>
+All databases are online
+
+
+</td>
+            <td rowspan='6' class='server-info'>
+41984.00
+
+
+</td>            <td>C:</td>
+            <td>77.73</td>
+            <td>72.16</td>
+            <td>149.89</td>
+            <td>51.86 %</td>
+        </tr>        <tr>            <td>D:</td>
+            <td>63.77</td>
+            <td>36.1</td>
+            <td>99.87</td>
+            <td>63.85 %</td>
+        </tr>        <tr>            <td>I:</td>
+            <td>19.29</td>
+            <td>0.68</td>
+            <td>19.97</td>
+            <td>96.61 %</td>
+        </tr>        <tr>            <td>L:</td>
+            <td>16.96</td>
+            <td>32.92</td>
+            <td>49.87</td>
+            <td>34 %</td>
+        </tr>        <tr>            <td>R:</td>
+            <td>68.6</td>
+            <td>1.27</td>
+            <td>69.87</td>
+            <td>98.18 %</td>
+        </tr>        <tr>            <td>T:</td>
+            <td>8.78</td>
+            <td>41.09</td>
+            <td>49.87</td>
+            <td>17.6 %</td>
+        </tr>        <tr>            <td rowspan='6' class='hostname'>CISUW1GELISET06.infosolco.com</td>
+            <td rowspan='6' class='server-info running-status'>Running</td>
+            <td rowspan='6' class='server-info running-status'>Running</td>
+            <td rowspan='6' class='server-info'>2026-10-16 21:58:11</td>
+            <td rowspan='6' class='server-info running-status'>
+All databases are online
+
+
+</td>
+            <td rowspan='6' class='server-info'>
+21504.00
+
+
+</td>            <td>C:</td>
+            <td>94.69</td>
+            <td>55.2</td>
+            <td>149.89</td>
+            <td>63.17 %</td>
+        </tr>        <tr>            <td>D:</td>
+            <td>37.83</td>
+            <td>12.04</td>
+            <td>49.87</td>
+            <td>75.86 %</td>
+        </tr>        <tr>            <td>I:</td>
+            <td>9.88</td>
+            <td>0.08</td>
+            <td>9.97</td>
+            <td>99.17 %</td>
+        </tr>        <tr>            <td>L:</td>
+            <td>47.18</td>
+            <td>2.69</td>
+            <td>49.87</td>
+            <td>94.6 %</td>
+        </tr>        <tr>            <td>R:</td>
+            <td>49.69</td>
+            <td>0.19</td>
+            <td>49.87</td>
+            <td>99.63 %</td>
+        </tr>        <tr>            <td>T:</td>
+            <td>28.78</td>
+            <td>21.09</td>
+            <td>49.87</td>
+            <td>57.7 %</td>
+        </tr>        <tr>            <td rowspan='6' class='hostname'>CISUW1GELISET21.infosolco.com</td>
+            <td rowspan='6' class='server-info running-status'>Running</td>
+            <td rowspan='6' class='server-info running-status'>Running</td>
+            <td rowspan='6' class='server-info'>2026-10-16 21:45:48</td>
+            <td rowspan='6' class='server-info running-status'>
+All databases are online
+
+
+</td>
+            <td rowspan='6' class='server-info'>
+41984.00
+
+
+</td>            <td>C:</td>
+            <td>81.25</td>
+            <td>68.63</td>
+            <td>149.89</td>
+            <td>54.21 %</td>
+        </tr>        <tr>            <td>D:</td>
+            <td>144.72</td>
+            <td>255.15</td>
+            <td>399.87</td>
+            <td>36.19 %</td>
+        </tr>        <tr>            <td>I:</td>
+            <td>12.61</td>
+            <td>37.36</td>
+            <td>49.97</td>
+            <td>25.24 %</td>
+        </tr>        <tr>            <td>L:</td>
+            <td>15.64</td>
+            <td>34.23</td>
+            <td>49.87</td>
+            <td>31.36 %</td>
+        </tr>        <tr>            <td>R:</td>
+            <td>66.18</td>
+            <td>13.7</td>
+            <td>79.87</td>
+            <td>82.85 %</td>
+        </tr>        <tr>            <td>T:</td>
+            <td>8.78</td>
+            <td>41.09</td>
+            <td>49.87</td>
+            <td>17.6 %</td>
+        </tr>        <tr>            <td rowspan='6' class='hostname'>CISUW1GELISIF01.infosolco.com</td>
+            <td rowspan='6' class='server-info running-status'>Running</td>
+            <td rowspan='6' class='server-info running-status'>Running</td>
+            <td rowspan='6' class='server-info'>2026-10-16 21:40:00</td>
+            <td rowspan='6' class='server-info running-status'>
+All databases are online
+
+
+</td>
+            <td rowspan='6' class='server-info'>
+21504.00
+
+
+</td>            <td>C:</td>
+            <td>104.61</td>
+            <td>45.28</td>
+            <td>149.89</td>
+            <td>69.79 %</td>
+        </tr>        <tr>            <td>D:</td>
+            <td>29.93</td>
+            <td>19.95</td>
+            <td>49.87</td>
+            <td>60 %</td>
+        </tr>        <tr>            <td>I:</td>
+            <td>9.87</td>
+            <td>0.1</td>
+            <td>9.97</td>
+            <td>99.04 %</td>
+        </tr>        <tr>            <td>L:</td>
+            <td>30.64</td>
+            <td>19.23</td>
+            <td>49.87</td>
+            <td>61.44 %</td>
+        </tr>        <tr>            <td>R:</td>
+            <td>48.57</td>
+            <td>1.3</td>
+            <td>49.87</td>
+            <td>97.39 %</td>
+        </tr>        <tr>            <td>T:</td>
+            <td>28.78</td>
+            <td>21.09</td>
+            <td>49.87</td>
+            <td>57.7 %</td>
+        </tr>        <tr>            <td rowspan='6' class='hostname'>CISUW1GELISAG51.infosolco.com</td>
+            <td rowspan='6' class='server-info running-status'>Running</td>
+            <td rowspan='6' class='server-info running-status'>Running</td>
+            <td rowspan='6' class='server-info'>2026-10-16 21:31:06</td>
+            <td rowspan='6' class='server-info running-status'>
+All databases are online
+
+
+</td>
+            <td rowspan='6' class='server-info'>
+111675.64
+
+
+</td>            <td>C:</td>
+            <td>90.1</td>
+            <td>59.79</td>
+            <td>149.89</td>
+            <td>60.11 %</td>
+        </tr>        <tr>            <td>D:</td>
+            <td>665.07</td>
+            <td>3738.8</td>
+            <td>4403.87</td>
+            <td>15.1 %</td>
+        </tr>        <tr>            <td>I:</td>
+            <td>1545.99</td>
+            <td>153.88</td>
+            <td>1699.87</td>
+            <td>90.95 %</td>
+        </tr>        <tr>            <td>L:</td>
+            <td>1881.26</td>
+            <td>678.61</td>
+            <td>2559.87</td>
+            <td>73.49 %</td>
+        </tr>        <tr>            <td>R:</td>
+            <td>814.45</td>
+            <td>977.42</td>
+            <td>1791.87</td>
+            <td>45.45 %</td>
+        </tr>        <tr>            <td>T:</td>
+            <td>30.71</td>
+            <td>169.16</td>
+            <td>199.87</td>
+            <td>15.37 %</td>
+        </tr>        <tr>            <td rowspan='6' class='hostname'>CISUW1GELISAR21.infosolco.com</td>
+            <td rowspan='6' class='server-info running-status'>Running</td>
+            <td rowspan='6' class='server-info running-status'>Running</td>
+            <td rowspan='6' class='server-info'>2026-10-16 21:28:16</td>
+            <td rowspan='6' class='server-info running-status'>
+All databases are online
+
+
+</td>
+            <td rowspan='6' class='server-info'>
+82944.00
+
+
+</td>            <td>C:</td>
+            <td>99.3</td>
+            <td>50.59</td>
+            <td>149.89</td>
+            <td>66.25 %</td>
+        </tr>        <tr>            <td>D:</td>
+            <td>184.33</td>
+            <td>1715.55</td>
+            <td>1899.87</td>
+            <td>9.7 %</td>
+        </tr>        <tr>            <td>I:</td>
+            <td>39.13</td>
+            <td>0.74</td>
+            <td>39.87</td>
+            <td>98.14 %</td>
+        </tr>        <tr>            <td>L:</td>
+            <td>71.67</td>
+            <td>248.2</td>
+            <td>319.87</td>
+            <td>22.41 %</td>
+        </tr>        <tr>            <td>R:</td>
+            <td>1706.03</td>
+            <td>243.85</td>
+            <td>1949.87</td>
+            <td>87.49 %</td>
+        </tr>        <tr>            <td>T:</td>
+            <td>168.77</td>
+            <td>81.1</td>
+            <td>249.87</td>
+            <td>67.54 %</td>
+        </tr>        <tr>            <td rowspan='6' class='hostname'>CISUW1GELISBP01.infosolco.com</td>
+            <td rowspan='6' class='server-info running-status'>Running</td>
+            <td rowspan='6' class='server-info running-status'>Running</td>
+            <td rowspan='6' class='server-info'>2026-10-16 21:28:52</td>
+            <td rowspan='6' class='server-info running-status'>
+All databases are online
+
+
+</td>
+            <td rowspan='6' class='server-info'>
+84984.07
+
+
+</td>            <td>C:</td>
+            <td>90.12</td>
+            <td>59.77</td>
+            <td>149.89</td>
+            <td>60.12 %</td>
+        </tr>        <tr>            <td>D:</td>
+            <td>1185.1</td>
+            <td>6414.78</td>
+            <td>7599.87</td>
+            <td>15.59 %</td>
+        </tr>        <tr>            <td>I:</td>
+            <td>268.93</td>
+            <td>0.95</td>
+            <td>269.87</td>
+            <td>99.65 %</td>
+        </tr>        <tr>            <td>L:</td>
+            <td>1942.51</td>
+            <td>1129.37</td>
+            <td>3071.87</td>
+            <td>63.24 %</td>
+        </tr>        <tr>            <td>R:</td>
+            <td>806.95</td>
+            <td>1242.92</td>
+            <td>2049.87</td>
+            <td>39.37 %</td>
+        </tr>        <tr>            <td>T:</td>
+            <td>116.78</td>
+            <td>83.09</td>
+            <td>199.87</td>
+            <td>58.43 %</td>
+        </tr>        <tr>            <td rowspan='6' class='hostname'>CISUW1GELISBP04.infosolco.com</td>
+            <td rowspan='6' class='server-info running-status'>Running</td>
+            <td rowspan='6' class='server-info running-status'>Running</td>
+            <td rowspan='6' class='server-info'>2026-10-16 21:28:43</td>
+            <td rowspan='6' class='server-info running-status'>
+All databases are online
+
+
+</td>
+            <td rowspan='6' class='server-info'>
+82944.00
+
+
+</td>            <td>C:</td>
+            <td>90.09</td>
+            <td>59.8</td>
+            <td>149.89</td>
+            <td>60.1 %</td>
+        </tr>        <tr>            <td>D:</td>
+            <td>1106.18</td>
+            <td>2477.69</td>
+            <td>3583.87</td>
+            <td>30.87 %</td>
+        </tr>        <tr>            <td>I:</td>
+            <td>172.95</td>
+            <td>6.92</td>
+            <td>179.87</td>
+            <td>96.15 %</td>
+        </tr>        <tr>            <td>L:</td>
+            <td>1165.18</td>
+            <td>370.69</td>
+            <td>1535.87</td>
+            <td>75.86 %</td>
+        </tr>        <tr>            <td>R:</td>
+            <td>2388.2</td>
+            <td>683.67</td>
+            <td>3071.87</td>
+            <td>77.74 %</td>
+        </tr>        <tr>            <td>T:</td>
+            <td>67.77</td>
+            <td>82.1</td>
+            <td>149.87</td>
+            <td>45.22 %</td>
+        </tr>        <tr>            <td rowspan='6' class='hostname'>CISUW1GELISMT01.infosolco.com</td>
+            <td rowspan='6' class='server-info running-status'>Running</td>
+            <td rowspan='6' class='server-info running-status'>Running</td>
+            <td rowspan='6' class='server-info'>2026-10-16 21:29:56</td>
+            <td rowspan='6' class='server-info running-status'>
+All databases are online
+
+
+</td>
+            <td rowspan='6' class='server-info'>
+41984.00
+
+
+</td>            <td>C:</td>
+            <td>103.85</td>
+            <td>46.04</td>
+            <td>149.89</td>
+            <td>69.28 %</td>
+        </tr>        <tr>            <td>D:</td>
+            <td>206.58</td>
+            <td>93.29</td>
+            <td>299.87</td>
+            <td>68.89 %</td>
+        </tr>        <tr>            <td>I:</td>
+            <td>9.88</td>
+            <td>0.09</td>
+            <td>9.97</td>
+            <td>99.13 %</td>
+        </tr>        <tr>            <td>L:</td>
+            <td>73.36</td>
+            <td>26.51</td>
+            <td>99.87</td>
+            <td>73.45 %</td>
+        </tr>        <tr>            <td>R:</td>
+            <td>141.06</td>
+            <td>8.81</td>
+            <td>149.87</td>
+            <td>94.12 %</td>
+        </tr>        <tr>            <td>T:</td>
+            <td>33.78</td>
+            <td>41.09</td>
+            <td>74.87</td>
+            <td>45.11 %</td>
+        </tr>        <tr>            <td rowspan='6' class='hostname'>CISUW1GELISMT27.infosolco.com</td>
+            <td rowspan='6' class='server-info running-status'>Running</td>
+            <td rowspan='6' class='server-info running-status'>Running</td>
+            <td rowspan='6' class='server-info'>2026-10-16 21:25:40</td>
+            <td rowspan='6' class='server-info running-status'>
+All databases are online
+
+
+</td>
+            <td rowspan='6' class='server-info'>
+82944.00
+
+
+</td>            <td>C:</td>
+            <td>90.09</td>
+            <td>59.8</td>
+            <td>149.89</td>
+            <td>60.1 %</td>
+        </tr>        <tr>            <td>D:</td>
+            <td>162.85</td>
+            <td>487.03</td>
+            <td>649.87</td>
+            <td>25.06 %</td>
+        </tr>        <tr>            <td>I:</td>
+            <td>9.15</td>
+            <td>0.81</td>
+            <td>9.97</td>
+            <td>91.84 %</td>
+        </tr>        <tr>            <td>L:</td>
+            <td>153.64</td>
+            <td>86.23</td>
+            <td>239.87</td>
+            <td>64.05 %</td>
+        </tr>        <tr>            <td>R:</td>
+            <td>377.89</td>
+            <td>121.98</td>
+            <td>499.87</td>
+            <td>75.6 %</td>
+        </tr>        <tr>            <td>T:</td>
+            <td>17.78</td>
+            <td>82.09</td>
+            <td>99.87</td>
+            <td>17.8 %</td>
+        </tr>        <tr>            <td rowspan='6' class='hostname'>CISUW1GELISMT34.infosolco.com</td>
+            <td rowspan='6' class='server-info running-status'>Running</td>
+            <td rowspan='6' class='server-info running-status'>Running</td>
+            <td rowspan='6' class='server-info'>2026-10-16 21:30:13</td>
+            <td rowspan='6' class='server-info running-status'>
+All databases are online
+
+
+</td>
+            <td rowspan='6' class='server-info'>
+41984.00
+
+
+</td>            <td>C:</td>
+            <td>103.75</td>
+            <td>46.14</td>
+            <td>149.89</td>
+            <td>69.22 %</td>
+        </tr>        <tr>            <td>D:</td>
+            <td>29.3</td>
+            <td>170.57</td>
+            <td>199.87</td>
+            <td>14.66 %</td>
+        </tr>        <tr>            <td>I:</td>
+            <td>9.88</td>
+            <td>0.09</td>
+            <td>9.97</td>
+            <td>99.15 %</td>
+        </tr>        <tr>            <td>L:</td>
+            <td>86.43</td>
+            <td>13.45</td>
+            <td>99.87</td>
+            <td>86.54 %</td>
+        </tr>        <tr>            <td>R:</td>
+            <td>72.79</td>
+            <td>27.08</td>
+            <td>99.87</td>
+            <td>72.88 %</td>
+        </tr>        <tr>            <td>T:</td>
+            <td>58.78</td>
+            <td>41.09</td>
+            <td>99.87</td>
+            <td>58.85 %</td>
+        </tr>        <tr>            <td rowspan='6' class='hostname'>CISUW1GELISRT01.infosolco.com</td>
+            <td rowspan='6' class='server-info running-status'>Running</td>
+            <td rowspan='6' class='server-info running-status'>Running</td>
+            <td rowspan='6' class='server-info'>2026-10-16 21:26:49</td>
+            <td rowspan='6' class='server-info negative'>
+Some databases are offline
+
+
+</td>
+            <td rowspan='6' class='server-info'>
+82944.00
+
+
+</td>            <td>C:</td>
+            <td>94.87</td>
+            <td>55.02</td>
+            <td>149.89</td>
+            <td>63.3 %</td>
+        </tr>        <tr>            <td>D:</td>
+            <td>1017.84</td>
+            <td>1182.03</td>
+            <td>2199.87</td>
+            <td>46.27 %</td>
+        </tr>        <tr>            <td>I:</td>
+            <td>118.97</td>
+            <td>0.9</td>
+            <td>119.87</td>
+            <td>99.25 %</td>
+        </tr>        <tr>            <td>L:</td>
+            <td>1689.31</td>
+            <td>358.56</td>
+            <td>2047.87</td>
+            <td>82.49 %</td>
+        </tr>        <tr>            <td>R:</td>
+            <td>1244.81</td>
+            <td>291.06</td>
+            <td>1535.87</td>
+            <td>81.05 %</td>
+        </tr>        <tr>            <td>T:</td>
+            <td>98.77</td>
+            <td>81.1</td>
+            <td>179.87</td>
+            <td>54.91 %</td>
+        </tr>        <tr>            <td rowspan='6' class='hostname'>CISUW1GPLISET51.infosolco.com</td>
+            <td rowspan='6' class='server-info running-status'>Running</td>
+            <td rowspan='6' class='server-info running-status'>Running</td>
+            <td rowspan='6' class='server-info'>2026-10-16 22:13:27</td>
+            <td rowspan='6' class='server-info running-status'>
+All databases are online
+
+
+</td>
+            <td rowspan='6' class='server-info'>
+21504.00
+
+
+</td>            <td>C:</td>
+            <td>93.94</td>
+            <td>55.95</td>
+            <td>149.89</td>
+            <td>62.67 %</td>
+        </tr>        <tr>            <td>D:</td>
+            <td>42.99</td>
+            <td>6.88</td>
+            <td>49.87</td>
+            <td>86.21 %</td>
+        </tr>        <tr>            <td>I:</td>
+            <td>9.9</td>
+            <td>0.07</td>
+            <td>9.97</td>
+            <td>99.32 %</td>
+        </tr>        <tr>            <td>L:</td>
+            <td>48.17</td>
+            <td>1.7</td>
+            <td>49.87</td>
+            <td>96.59 %</td>
+        </tr>        <tr>            <td>R:</td>
+            <td>43.36</td>
+            <td>6.51</td>
+            <td>49.87</td>
+            <td>86.94 %</td>
+        </tr>        <tr>            <td>T:</td>
+            <td>28.78</td>
+            <td>21.09</td>
+            <td>49.87</td>
+            <td>57.7 %</td>
+        </tr>        <tr>            <td rowspan='6' class='hostname'>CISUW1GPLISAD51.infosolco.com</td>
+            <td rowspan='6' class='server-info running-status'>Running</td>
+            <td rowspan='6' class='server-info running-status'>Running</td>
+            <td rowspan='6' class='server-info'>2026-10-16 21:30:10</td>
+            <td rowspan='6' class='server-info running-status'>
+All databases are online
+
+
+</td>
+            <td rowspan='6' class='server-info'>
+41984.00
+
+
+</td>            <td>C:</td>
+            <td>99.27</td>
+            <td>50.62</td>
+            <td>149.89</td>
+            <td>66.23 %</td>
+        </tr>        <tr>            <td>D:</td>
+            <td>607.5</td>
+            <td>1142.37</td>
+            <td>1749.87</td>
+            <td>34.72 %</td>
+        </tr>        <tr>            <td>I:</td>
+            <td>18.91</td>
+            <td>0.96</td>
+            <td>19.87</td>
+            <td>95.16 %</td>
+        </tr>        <tr>            <td>L:</td>
+            <td>173.19</td>
+            <td>126.69</td>
+            <td>299.87</td>
+            <td>57.75 %</td>
+        </tr>        <tr>            <td>R:</td>
+            <td>166.57</td>
+            <td>233.3</td>
+            <td>399.87</td>
+            <td>41.66 %</td>
+        </tr>        <tr>            <td>T:</td>
+            <td>58.78</td>
+            <td>41.09</td>
+            <td>99.87</td>
+            <td>58.85 %</td>
+        </tr>        <tr>            <td rowspan='6' class='hostname'>CISUW1GELISMS44.infosolco.com</td>
+            <td rowspan='6' class='server-info running-status'>Running</td>
+            <td rowspan='6' class='server-info running-status'>Running</td>
+            <td rowspan='6' class='server-info'>2026-10-16 21:27:30</td>
+            <td rowspan='6' class='server-info running-status'>
+All databases are online
+
+
+</td>
+            <td rowspan='6' class='server-info'>
+82944.00
+
+
+</td>            <td>C:</td>
+            <td>90.02</td>
+            <td>59.86</td>
+            <td>149.89</td>
+            <td>60.06 %</td>
+        </tr>        <tr>            <td>D:</td>
+            <td>312.59</td>
+            <td>687.29</td>
+            <td>999.87</td>
+            <td>31.26 %</td>
+        </tr>        <tr>            <td>I:</td>
+            <td>139.59</td>
+            <td>0.28</td>
+            <td>139.87</td>
+            <td>99.8 %</td>
+        </tr>        <tr>            <td>L:</td>
+            <td>232.26</td>
+            <td>267.62</td>
+            <td>499.87</td>
+            <td>46.46 %</td>
+        </tr>        <tr>            <td>R:</td>
+            <td>387.43</td>
+            <td>112.44</td>
+            <td>499.87</td>
+            <td>77.51 %</td>
+        </tr>        <tr>            <td>T:</td>
+            <td>18.78</td>
+            <td>81.09</td>
+            <td>99.87</td>
+            <td>18.8 %</td>
+        </tr>        <tr>            <td rowspan='6' class='hostname'>CISUW1GPLISMS22.infosolco.com</td>
+            <td rowspan='6' class='server-info running-status'>Running</td>
+            <td rowspan='6' class='server-info running-status'>Running</td>
+            <td rowspan='6' class='server-info'>2026-10-16 21:35:11</td>
+            <td rowspan='6' class='server-info running-status'>
+All databases are online
+
+
+</td>
+            <td rowspan='6' class='server-info'>
+82944.00
+
+
+</td>            <td>C:</td>
+            <td>90.13</td>
+            <td>59.76</td>
+            <td>149.89</td>
+            <td>60.13 %</td>
+        </tr>        <tr>            <td>D:</td>
+            <td>1150.56</td>
+            <td>1149.31</td>
+            <td>2299.87</td>
+            <td>50.03 %</td>
+        </tr>        <tr>            <td>I:</td>
+            <td>49.71</td>
+            <td>0.16</td>
+            <td>49.87</td>
+            <td>99.68 %</td>
+        </tr>        <tr>            <td>L:</td>
+            <td>140.46</td>
+            <td>359.42</td>
+            <td>499.87</td>
+            <td>28.1 %</td>
+        </tr>        <tr>            <td>R:</td>
+            <td>1805.95</td>
+            <td>193.92</td>
+            <td>1999.87</td>
+            <td>90.3 %</td>
+        </tr>        <tr>            <td>T:</td>
+            <td>18.78</td>
+            <td>81.09</td>
+            <td>99.87</td>
+            <td>18.8 %</td>
+        </tr>        <tr>            <td rowspan='6' class='hostname'>CISUW1GPLISIF11.infosolco.com</td>
+            <td rowspan='6' class='server-info running-status'>Running</td>
+            <td rowspan='6' class='server-info running-status'>Running</td>
+            <td rowspan='6' class='server-info'>2026-09-19 22:08:00</td>
+            <td rowspan='6' class='server-info running-status'>
+All databases are online
+
+
+</td>
+            <td rowspan='6' class='server-info'>
+21504.00
+
+
+</td>            <td>C:</td>
+            <td>104</td>
+            <td>45.89</td>
+            <td>149.89</td>
+            <td>69.39 %</td>
+        </tr>        <tr>            <td>D:</td>
+            <td>275.89</td>
+            <td>23.98</td>
+            <td>299.87</td>
+            <td>92 %</td>
+        </tr>        <tr>            <td>I:</td>
+            <td>9.89</td>
+            <td>0.08</td>
+            <td>9.97</td>
+            <td>99.22 %</td>
+        </tr>        <tr>            <td>L:</td>
+            <td>179.31</td>
+            <td>20.56</td>
+            <td>199.87</td>
+            <td>89.71 %</td>
+        </tr>        <tr>            <td>R:</td>
+            <td>197.14</td>
+            <td>2.73</td>
+            <td>199.87</td>
+            <td>98.63 %</td>
+        </tr>        <tr>            <td>T:</td>
+            <td>78.78</td>
+            <td>21.1</td>
+            <td>99.87</td>
+            <td>78.88 %</td>
+        </tr></table>
+</body>
+</html>

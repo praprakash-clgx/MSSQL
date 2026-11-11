@@ -1,0 +1,137 @@
+--sp_configure 'Ole Automation Procedures', 1
+--reconfigure with override
+--go
+--sp_configure 'xp_cmdshell', 0
+--reconfigure with override
+--go
+Use msdb
+go
+SET ANSI_WARNINGS OFF
+SET NOCOUNT ON
+declare @servername nvarchar(200)
+declare @dbcount varchar(20)
+declare @dbname  varchar(30)
+declare @size	 varchar(20)
+declare @type	 varchar(20)
+declare	@duration varchar(30)
+declare	@username varchar(50)
+declare @status   varchar(75)
+declare @rundate  varchar(20)
+
+select 	a.name, max(backup_finish_date) as bkup_finish_date
+INTO 	#mx
+from 	master.sys.databases a
+LEFT 	OUTER JOIN msdb..backupset b
+ON      a.name = b.database_name
+where	a.name not in ('tempdb','model','msdb') and a.state_desc not in('OFFLINE','RESTORING') and a.is_read_only=0 and a.database_id >4 
+and b.type = 'I'
+and a.database_id not in (select database_id from sys.database_mirroring where mirroring_guid is not null and mirroring_role_desc = 'MIRROR')
+--or b.type ='I'
+group	by a.name
+order	by a.name
+
+select 	a.name as dbname ,
+	CONVERT(decimal(10,2),Round((backup_size/1048576),0)) as size_mb, 	
+	CASE type
+	     when 'D' THEN 'Full'
+	     when 'I' THEN 'Differential'
+	     when 'L' THEN 'Log'
+	     when 'F' THEN 'File or Filegroup'
+	END as type,
+	CASE
+	    WHEN datediff(s,backup_start_date, backup_finish_date) = 0
+		 THEN convert(varchar(10),(datediff(ms,backup_start_date, backup_finish_date))) + ' ms(s).'
+	    WHEN datediff(s,backup_start_date, backup_finish_date) > 0
+			and datediff(s,backup_start_date, backup_finish_date) <= 59
+		 THEN convert(varchar(10),(datediff(s,backup_start_date, backup_finish_date))) + ' sec(s).'
+	    WHEN datediff(s,backup_start_date, backup_finish_date) >= 60 
+			and datediff(s,backup_start_date, backup_finish_date) <= 3599
+		 THEN convert(varchar(10),(datediff(n,backup_start_date, backup_finish_date)))+ ' mt(s).'
+	    WHEN datediff(s,backup_start_date, backup_finish_date) >=3600
+		 THEN convert(varchar(10),(datediff(m,backup_start_date, backup_finish_date)))+ ' hr(s).'
+	END as duration,
+	user_name as username,
+	CASE WHEN b.backup_start_date > DATEADD(dd,-2,getdate())
+		  THEN 'Backup Completed  '
+	     ELSE 'Backup Not Completed'
+	END
+	AS 'Status',	
+	a.bkup_finish_date as rundate
+INTO	#backup
+from 	#mx a,
+	msdb..backupset b
+where 	a.name = b.database_name
+and	a.bkup_finish_date = b.backup_finish_date 
+and	server_name = CONVERT(varchar(100), serverproperty('servername'))
+and b.type = 'I'
+and datepart(yy,a.bkup_finish_date)= datepart(yy,getdate())
+
+ALTER TABLE #backup ALTER COLUMN Status VARCHAR(150) NOT NULL
+
+select @servername =  CONVERT(varchar(100), serverproperty('servername'))
+
+select @dbcount = count(dbname) from #backup
+
+
+if (@servername='PMPLWSQL1004V\SQLP01')
+begin
+	update #backup set Status =  'No Diff_BAckup schedule' where Status = 'Backup Not Completed'and dbname in ('DBAdmin','FIANET','VAnetSTG','VANETSVC','VANet','VAnetArchive')
+end
+
+if (@servername='Stlap454009msql')
+begin
+	update #backup set Status =  'Backup not needed' where Status = 'Backup Not Completed'and dbname in ('RM_Cache_CF2BEBF5','RM_TEMP_CONTENT_B71BB5DA_1444777015')
+end
+
+
+
+if (@servername='HWPVR501')
+begin
+	update #backup set Status =  'Database Offline' where Status = 'Backup Not Completed'and dbname in ('IntelliScreen')
+end
+
+if (@dbcount <>0)
+begin
+	print '<tr><tr rowspan='+ @dbcount +'><td align=center bgcolor = gray rowspan='+ @dbcount +'><b><font face=verdana color=white size=2>' +  @servername + '</font></b></td>'
+	print '<td align=center rowspan='+ @dbcount +'><font face=verdana '
+	print 'size=2>'
+	print 'PROD'
+	print '</font></td>'
+
+	DECLARE bkpup CURSOR FOR SELECT dbname, size_mb, type, duration, Status, rundate from #backup
+	OPEN bkpup 
+
+	FETCH NEXT FROM bkpup
+	INTO @dbname, @size, @type, @duration, @status, @rundate
+
+	WHILE @@FETCH_STATUS = 0
+	BEGIN
+		PRINT  '<td align=center><font face=verdana size=2>' +  @dbname + '</font></td>'
+		PRINT  '<td align=center><font face=verdana size=2>' +  @size + '</font></td>'
+		PRINT  '<td align=center><font face=verdana size=2>' +  @duration + '</font></td>'
+		PRINT  '<td align=center><font face=verdana size=2>' +  @type + '</font></td>'
+		
+		IF @status <> 'Backup Completed'
+			PRINT  '<td align=center><b><font face=verdana size=2 COLOR=Red>' +  @status + '*</font></b></td>'
+		ELSE
+			PRINT  '<td align=center><font face=verdana size=2>' +  @status + '</font></td>'
+		PRINT  '<td align=center><font face=verdana size=2>' +  @rundate + '</font></td></tr>'
+		FETCH NEXT FROM bkpup
+		INTO @dbname, @size, @type, @duration, @status, @rundate
+
+	END
+	Close bkpup
+	Deallocate bkpup 
+
+
+
+	print '</tr>'
+END
+drop table #mx
+drop table #backup
+go
+--sp_configure 'Ole Automation Procedures', 0
+--reconfigure with override
+--go
+--sp_configure 'xp_cmdshell', 0
+--reconfigure with override
